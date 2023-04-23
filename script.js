@@ -5,3 +5,5 @@ for (let i = 0; i < 16**2; i++) {
     square.className = "square";
     gridContainer.appendChild(square);
 }
+
+document.body.appendChild(gridContainer);
