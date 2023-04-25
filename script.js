@@ -14,6 +14,8 @@ function createGrid(size) {
     document.body.appendChild(gridContainer);
 }
 
+createGrid(16);
+
 let button = document.createElement("button");
 button.textContent = "Create New Grid";
 document.body.insertBefore(button, gridContainer);
