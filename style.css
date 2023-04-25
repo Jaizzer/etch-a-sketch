@@ -4,7 +4,6 @@
     width: 960px;
     height: 960px;
     max-width: 960px;
-    box-sizing: border-box;
     border: 1px solid black;
 }
 
