@@ -8,3 +8,7 @@ for (let i = 0; i < 16**2; i++) {
 }
 
 document.body.appendChild(gridContainer);
+
+function changeColor(e) {
+    e.target.style.backgroundColor = "red";
+}
