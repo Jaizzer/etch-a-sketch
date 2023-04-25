@@ -1,9 +1,9 @@
-function createGrid() {
+function createGrid(size) {
 
     let gridContainer = document.createElement("div");
     gridContainer.className = "grid-container";
 
-    for (let i = 0; i < 16 ** 2; i++) {
+    for (let i = 0; i < size ** 2; i++) {
         let gridItem = document.createElement("div");
         gridItem.className = "grid-item";
         gridContainer.appendChild(gridItem);
