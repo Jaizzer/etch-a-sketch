@@ -5,8 +5,8 @@ function createGrid(size) {
         let gridItem = document.createElement("div");
         gridItem.className = "grid-item";
 
-        gridItem.style.width = `${960 / size}px;`
-        gridItem.style.height = `${960 / size}px;`
+        gridItem.style.width = `${960 / size}px`;
+        gridItem.style.height = `${960 / size}px`;
 
         gridContainer.appendChild(gridItem);
 
