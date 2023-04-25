@@ -8,3 +8,11 @@
     border-left: 1px solid black;
     border-top: 1px solid black;
 }
+
+.grid-item {
+    width: calc(100% / 16);
+    height: calc(100% / 16);
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    box-sizing: border-box;
+}
