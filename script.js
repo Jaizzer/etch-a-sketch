@@ -26,7 +26,7 @@ function changeColor(e) {
     e.target.style.backgroundColor = "red";
 }
 
-function replaceCurrentGrid(event, parent) {
+function replaceCurrentGrid(event) {
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
     }
