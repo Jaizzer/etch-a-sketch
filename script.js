@@ -1,5 +1,18 @@
 let gridContainer = document.querySelector(".grid-container");
 
+let button = document.createElement("button");
+button.textContent = "Create New Grid";
+document.body.insertBefore(button, gridContainer);
+
+button.addEventListener("click", replaceCurrentGrid);
+
+createGrid(16);
+
+
+function changeColor(e) {
+    e.target.style.backgroundColor = "red";
+}
+
 function createGrid(size) {
     for (let i = 0; i < size ** 2; i++) {
         let gridItem = document.createElement("div");
@@ -12,18 +25,6 @@ function createGrid(size) {
         gridItem.addEventListener("mouseenter", changeColor);
     }
     document.body.appendChild(gridContainer);
-}
-
-createGrid(16);
-
-let button = document.createElement("button");
-button.textContent = "Create New Grid";
-document.body.insertBefore(button, gridContainer);
-
-button.addEventListener("click", replaceCurrentGrid);
-
-function changeColor(e) {
-    e.target.style.backgroundColor = "red";
 }
 
 function replaceCurrentGrid() {
