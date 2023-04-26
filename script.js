@@ -36,4 +36,8 @@ function replaceCurrentGrid() {
         }
         createGrid(gridSize);
     }
+    else {
+        alert("Invalid Values. Try again.")
+        replaceCurrentGrid();
+    }
 }
