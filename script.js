@@ -27,8 +27,8 @@ function changeColor(e) {
 }
 
 function replaceCurrentGrid(event) {
-    while (parent.firstChild) {
-        parent.removeChild(parent.firstChild);
+    while (gridContainer.firstChild) {
+        gridContainer.removeChild(gridContainer.firstChild);
     }
 
     let gridSize = prompt("Enter new grid size");
