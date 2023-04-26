@@ -16,7 +16,11 @@ createGrid(16);
 
 // Change the color of a square when the mouse pointer hovers over it
 function changeColor(e) {
-    e.target.style.backgroundColor = "red";
+    const red = Math.floor(Math.random() * 256);
+    const blue = Math.floor(Math.random() * 256);
+    const green = Math.floor(Math.random() * 256);
+
+    e.target.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;    
 }
 
 // Create a grid with the specified size and add it to the grid container
