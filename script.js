@@ -28,4 +28,6 @@ function replaceCurrentGrid(event, parent) {
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
     }
+
+    let gridSize = prompt("Enter new grid size");
 }
