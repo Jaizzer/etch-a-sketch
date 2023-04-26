@@ -27,11 +27,13 @@ function changeColor(e) {
 }
 
 function replaceCurrentGrid(event) {
-    while (gridContainer.firstChild) {
-        gridContainer.removeChild(gridContainer.firstChild);
-    }
 
     let gridSize = prompt("Enter new grid size");
 
-    createGrid(gridSize);
+    if (((gridSize > 0)) && (gridSize < 100 || gridSize === 100)) {
+        while (gridContainer.firstChild) {
+            gridContainer.removeChild(gridContainer.firstChild);
+        }
+        createGrid(gridSize);
+    }
 }
