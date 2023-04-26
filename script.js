@@ -27,10 +27,10 @@ function changeColor(e) {
 function createGrid(size) {
     for (let i = 0; i < size ** 2; i++) {
         let gridItem = document.createElement("div");
-
+        
         // Set the width and height of each square based on the grid size
-        gridItem.style.width = `${960 / size}px`;
-        gridItem.style.height = `${960 / size}px`;
+        gridItem.style.width = `${parseFloat(window.getComputedStyle(gridContainer).getPropertyValue("width")) / size}px`;
+        gridItem.style.height = `${parseFloat(window.getComputedStyle(gridContainer).getPropertyValue("height")) / size}px`;
 
         // Add the square to the grid container and add an event listener to change its color on mouseenter
         gridContainer.appendChild(gridItem);
