@@ -30,4 +30,6 @@ function replaceCurrentGrid(event, parent) {
     }
 
     let gridSize = prompt("Enter new grid size");
+
+    createGrid(gridSize);
 }
