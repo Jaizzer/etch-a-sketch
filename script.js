@@ -26,7 +26,7 @@ function changeColor(e) {
     e.target.style.backgroundColor = "red";
 }
 
-function replaceCurrentGrid(event) {
+function replaceCurrentGrid() {
 
     let gridSize = prompt("Enter new grid size");
 
