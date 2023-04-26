@@ -23,3 +23,9 @@ document.body.insertBefore(button, gridContainer);
 function changeColor(e) {
     e.target.style.backgroundColor = "red";
 }
+
+function removeChildren(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
