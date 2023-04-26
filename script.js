@@ -20,6 +20,8 @@ let button = document.createElement("button");
 button.textContent = "Create New Grid";
 document.body.insertBefore(button, gridContainer);
 
+button.addEventListener("click", replaceCurrentGrid);
+
 function changeColor(e) {
     e.target.style.backgroundColor = "red";
 }
