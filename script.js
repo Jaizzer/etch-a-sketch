@@ -8,7 +8,7 @@ let button = document.createElement("button");
 button.textContent = "Create New Grid";
 
 // Add the button to the document before the grid container
-document.body.insertBefore(button, gridContainer);
+gridContainerParent.insertBefore(button, gridContainer);
 
 // Add an event listener to the button that replaces the current grid when clicked
 button.addEventListener("click", replaceCurrentGrid);
@@ -40,7 +40,7 @@ function createGrid(size) {
     }
 
     // Add the grid container to the document
-    document.body.appendChild(gridContainer);
+    gridContainerParent.appendChild(gridContainer);
 }
 
 // Replace the current grid with a new grid of the specified size
