@@ -1,5 +1,5 @@
 // Select the grid container element
-let gridContainer = document.querySelector(".grid-container");
+let gridContainer = document.querySelector(".grid");
 
 // Create a button element and set its text content
 let button = document.createElement("button");
