@@ -6,6 +6,8 @@ let gridContainerParent = gridContainer.parentElement;
 // Create a button element and set its text content
 let button = document.querySelector("#new-grid");
 
+let gridItems = [];
+
 // Add an event listener to the button that replaces the current grid when clicked
 button.addEventListener("click", replaceCurrentGrid);
 
@@ -56,4 +58,3 @@ function replaceCurrentGrid() {
         replaceCurrentGrid();
     }
 }
-
