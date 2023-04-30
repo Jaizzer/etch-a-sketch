@@ -6,10 +6,10 @@ let gridContainerParent = gridContainer.parentElement;
 // Create a button element and set its text content
 let button = document.querySelector("#new-grid");
 
-let gridItems = [];
-
 // Add an event listener to the button that replaces the current grid when clicked
 button.addEventListener("click", replaceCurrentGrid);
+
+let gridItems = [];
 
 // Create a grid with a default size of 16 squares
 createGrid(16);
@@ -28,53 +28,11 @@ function changeColor(e, input) {
     }
 }
 
-let toggleBlackButton = document.querySelector("#black");
-toggleBlackButton.addEventListener("click", function () {
-    removeAllEventListeners()
-    gridItems.forEach(function (element) {
-        element.addEventListener("mouseenter",  function(e) {
-            changeColor(e, "black");
-        });    
-    })
-})
-
-let eraser = document.querySelector("#eraser");
-eraser.addEventListener("click", function () {
-    removeAllEventListeners();
-    gridItems.forEach(function (element) {
-        element.addEventListener("mouseenter",  function(e) {
-            changeColor(e, "white");
-        });
-    })
-})
-
-let colorPicker = document.querySelector("#color-picker");
-console.log(colorPicker);
-colorPicker.addEventListener("change", function () {
-    removeAllEventListeners();
-    gridItems.forEach(function (element) {
-        element.addEventListener("mouseenter",  function(e) {
-            changeColor(e, `${colorPicker.value}`);
-        });
-    })
-})
-
-let rainbow = document.querySelector("#rainbow");
-console.log(rainbow);
-rainbow.addEventListener("click", function () {
-    removeAllEventListeners();
-    gridItems.forEach(function (element) {
-        element.addEventListener("mouseenter", function(e) {
-            changeColor(e, "random");
-        });
-    })
-});
-
 // Create a grid with the specified size and add it to the grid container
 function createGrid(size) {
     for (let i = 0; i < size ** 2; i++) {
         let gridItem = document.createElement("div");
-        
+
         // Set the width and height of each square based on the grid size
         gridItem.style.width = `${parseFloat(window.getComputedStyle(gridContainer).getPropertyValue("width")) / size}px`;
         gridItem.style.height = `${parseFloat(window.getComputedStyle(gridContainer).getPropertyValue("height")) / size}px`;
@@ -83,6 +41,8 @@ function createGrid(size) {
         gridContainer.appendChild(gridItem);
         gridItem.addEventListener("mouseenter", changeColor);
     }
+
+    gridItems = Array.from(gridContainer.children);
 
     // Add the grid container to the document
     gridContainerParent.appendChild(gridContainer);
@@ -107,6 +67,50 @@ function replaceCurrentGrid() {
 }
 
 
+let toggleBlackButton = document.querySelector("#black");
+toggleBlackButton.addEventListener("click", function () {
+    removeAllEventListeners()
+    gridItems.forEach(function (element) {
+        element.addEventListener("mouseenter",  function(e) {
+            changeColor(e, "black");
+        });    
+    })
+})
+
+let eraser = document.querySelector("#eraser");
+eraser.addEventListener("click", function () {
+    removeAllEventListeners();
+    gridItems.forEach(function (element) {
+        element.addEventListener("mouseenter",  function(e) {
+            changeColor(e, "white");
+        });
+    })
+})
+
+
+let colorPicker = document.querySelector("#color-picker");
+console.log(colorPicker);
+colorPicker.addEventListener("change", function () {
+    removeAllEventListeners();
+    gridItems.forEach(function (element) {
+        element.addEventListener("mouseenter",  function(e) {
+            changeColor(e, `${colorPicker.value}`);
+        });
+    })
+})
+
+let rainbow = document.querySelector("#rainbow");
+console.log(rainbow);
+rainbow.addEventListener("click", function () {
+    removeAllEventListeners();
+    gridItems.forEach(function (element) {
+        element.addEventListener("mouseenter", function(e) {
+            changeColor(e, "random");
+        });
+    })
+});
+
+
 function removeAllEventListeners() {
     gridItems.forEach(function (element) {
         const newElement = element.cloneNode(true);
@@ -114,3 +118,4 @@ function removeAllEventListeners() {
     })
     gridItems = Array.from(gridContainer.children);
 }
+  
