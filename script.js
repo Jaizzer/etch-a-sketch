@@ -44,7 +44,7 @@ function replaceCurrentGrid() {
     let gridSize = prompt("Enter new grid size");
 
     // Check that the grid size is valid and create a new grid with the specified size
-    if (((gridSize > 0)) && (gridSize < 100 || gridSize === 100)) {
+    if (((gridSize > 0)) && (gridSize <= 100)) {
         while (gridContainer.firstChild) {
             gridContainer.removeChild(gridContainer.firstChild);
         }
