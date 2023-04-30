@@ -15,12 +15,17 @@ button.addEventListener("click", replaceCurrentGrid);
 createGrid(16);
 
 // Change the color of a square when the mouse pointer hovers over it
-function changeColor(e) {
-    const red = Math.floor(Math.random() * 256);
-    const blue = Math.floor(Math.random() * 256);
-    const green = Math.floor(Math.random() * 256);
-
-    e.target.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;    
+function changeColor(e, input) {
+    if (input === "random") {
+        const red = Math.floor(Math.random() * 256);
+        const blue = Math.floor(Math.random() * 256);
+        const green = Math.floor(Math.random() * 256);
+        
+        e.target.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+    }
+    else {
+        e.target.style.backgroundColor = input;
+    }
 }
 
 // Create a grid with the specified size and add it to the grid container
