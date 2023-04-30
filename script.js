@@ -38,6 +38,16 @@ toggleBlackButton.addEventListener("click", function () {
     })
 })
 
+let eraser = document.querySelector("#eraser");
+eraser.addEventListener("click", function () {
+    removeAllEventListeners();
+    gridItems.forEach(function (element) {
+        element.addEventListener("mouseenter",  function(e) {
+            changeColor(e, "white");
+        });
+    })
+})
+
 // Create a grid with the specified size and add it to the grid container
 function createGrid(size) {
     for (let i = 0; i < size ** 2; i++) {
