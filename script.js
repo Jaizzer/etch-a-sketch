@@ -63,3 +63,12 @@ function replaceCurrentGrid() {
         replaceCurrentGrid();
     }
 }
+
+
+function removeAllEventListeners() {
+    gridItems.forEach(function (element) {
+        const newElement = element.cloneNode(true);
+        element.parentElement.replaceChild(newElement, element)
+    })
+    gridItems = Array.from(gridContainer.children);
+}
