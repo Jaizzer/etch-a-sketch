@@ -61,7 +61,6 @@ function replaceCurrentGrid() {
     // If the grid size is invalid, alert the user and prompt for a new size
     else {
         alert("Invalid Values. Try again.")
-        replaceCurrentGrid();
     }
 }
 
