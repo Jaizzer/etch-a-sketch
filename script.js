@@ -39,7 +39,6 @@ function createGrid(size) {
 
         // Add the square to the grid container and add an event listener to change its color on mouseenter
         gridContainer.appendChild(gridItem);
-        gridItem.addEventListener("mouseenter", changeColor);
     }
 
     gridItems = Array.from(gridContainer.children);
