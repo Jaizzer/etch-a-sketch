@@ -65,8 +65,8 @@ function replaceCurrentGrid() {
 }
 
 
-let toggleBlackButton = document.querySelector("#black");
-toggleBlackButton.addEventListener("click", function () {
+let blackButton = document.querySelector("#black");
+blackButton.addEventListener("click", function () {
     removeAllEventListeners()
     gridItems.forEach(function (element) {
         element.addEventListener("mouseenter",  function(e) {
@@ -96,8 +96,8 @@ colorPicker.addEventListener("change", function () {
     })
 })
 
-let rainbow = document.querySelector("#rainbow");
-rainbow.addEventListener("click", function () {
+let rainbowButton = document.querySelector("#rainbow");
+rainbowButton.addEventListener("click", function () {
     removeAllEventListeners();
     gridItems.forEach(function (element) {
         element.addEventListener("mouseenter", function(e) {
