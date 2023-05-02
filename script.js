@@ -14,6 +14,7 @@ let gridItems = [];
 // Create a grid with a default size of 16 squares
 createGrid(16);
 
+// Add functionality to the black button to create a black-inked pen effect
 let blackButton = document.querySelector("#black");
 blackButton.addEventListener("click", function () {
     removeAllEventListeners()
@@ -24,6 +25,7 @@ blackButton.addEventListener("click", function () {
     })
 })
 
+// Add functionality to the eraser button to create an eraser effect
 let eraser = document.querySelector("#eraser");
 eraser.addEventListener("click", function () {
     removeAllEventListeners();
@@ -34,7 +36,7 @@ eraser.addEventListener("click", function () {
     })
 })
 
-
+// Add functionality to the color picker button to create a custom-colored-inked pen effect
 let colorPicker = document.querySelector("#color-picker");
 colorPicker.addEventListener("change", function () {
     removeAllEventListeners();
@@ -45,6 +47,7 @@ colorPicker.addEventListener("change", function () {
     })
 })
 
+// Add functionality to the rainbow button to create a rainbow-inked pen effect
 let rainbowButton = document.querySelector("#rainbow");
 rainbowButton.addEventListener("click", function () {
     removeAllEventListeners();
@@ -55,6 +58,7 @@ rainbowButton.addEventListener("click", function () {
     })
 });
 
+// Add funcionality to the reset button to create a 'start-over' effect
 let resetButton = document.querySelector("#resetter");
 resetButton.addEventListener("click", function () {
     removeAllEventListeners();
@@ -113,6 +117,7 @@ function replaceCurrentGrid() {
     }
 }
 
+// Remove all previously put event listeners to grid items
 function removeAllEventListeners() {
     gridItems.forEach(function (element) {
         const newElement = element.cloneNode(true);
