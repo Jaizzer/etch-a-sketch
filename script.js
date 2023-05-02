@@ -106,6 +106,13 @@ rainbowButton.addEventListener("click", function () {
     })
 });
 
+let resetButton = document.querySelector("#resetter");
+resetButton.addEventListener("click", function () {
+    removeAllEventListeners();
+    gridItems.forEach(function (element) {
+        element.style.backgroundColor = "white";
+    })
+});
 
 function removeAllEventListeners() {
     gridItems.forEach(function (element) {
