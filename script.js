@@ -87,7 +87,6 @@ eraser.addEventListener("click", function () {
 
 
 let colorPicker = document.querySelector("#color-picker");
-console.log(colorPicker);
 colorPicker.addEventListener("change", function () {
     removeAllEventListeners();
     gridItems.forEach(function (element) {
@@ -98,7 +97,6 @@ colorPicker.addEventListener("change", function () {
 })
 
 let rainbow = document.querySelector("#rainbow");
-console.log(rainbow);
 rainbow.addEventListener("click", function () {
     removeAllEventListeners();
     gridItems.forEach(function (element) {
