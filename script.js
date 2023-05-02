@@ -14,6 +14,55 @@ let gridItems = [];
 // Create a grid with a default size of 16 squares
 createGrid(16);
 
+let blackButton = document.querySelector("#black");
+blackButton.addEventListener("click", function () {
+    removeAllEventListeners()
+    gridItems.forEach(function (element) {
+        element.addEventListener("mouseenter",  function(e) {
+            changeColor(e, "black");
+        });    
+    })
+})
+
+let eraser = document.querySelector("#eraser");
+eraser.addEventListener("click", function () {
+    removeAllEventListeners();
+    gridItems.forEach(function (element) {
+        element.addEventListener("mouseenter",  function(e) {
+            changeColor(e, "white");
+        });
+    })
+})
+
+
+let colorPicker = document.querySelector("#color-picker");
+colorPicker.addEventListener("change", function () {
+    removeAllEventListeners();
+    gridItems.forEach(function (element) {
+        element.addEventListener("mouseenter",  function(e) {
+            changeColor(e, `${colorPicker.value}`);
+        });
+    })
+})
+
+let rainbowButton = document.querySelector("#rainbow");
+rainbowButton.addEventListener("click", function () {
+    removeAllEventListeners();
+    gridItems.forEach(function (element) {
+        element.addEventListener("mouseenter", function(e) {
+            changeColor(e, "random");
+        });
+    })
+});
+
+let resetButton = document.querySelector("#resetter");
+resetButton.addEventListener("click", function () {
+    removeAllEventListeners();
+    gridItems.forEach(function (element) {
+        element.style.backgroundColor = "white";
+    })
+});
+
 // Change the color of a square when the mouse pointer hovers over it
 function changeColor(e, input) {
     if (input === "random") {
@@ -63,56 +112,6 @@ function replaceCurrentGrid() {
         alert("Invalid Values. Try again.")
     }
 }
-
-
-let blackButton = document.querySelector("#black");
-blackButton.addEventListener("click", function () {
-    removeAllEventListeners()
-    gridItems.forEach(function (element) {
-        element.addEventListener("mouseenter",  function(e) {
-            changeColor(e, "black");
-        });    
-    })
-})
-
-let eraser = document.querySelector("#eraser");
-eraser.addEventListener("click", function () {
-    removeAllEventListeners();
-    gridItems.forEach(function (element) {
-        element.addEventListener("mouseenter",  function(e) {
-            changeColor(e, "white");
-        });
-    })
-})
-
-
-let colorPicker = document.querySelector("#color-picker");
-colorPicker.addEventListener("change", function () {
-    removeAllEventListeners();
-    gridItems.forEach(function (element) {
-        element.addEventListener("mouseenter",  function(e) {
-            changeColor(e, `${colorPicker.value}`);
-        });
-    })
-})
-
-let rainbowButton = document.querySelector("#rainbow");
-rainbowButton.addEventListener("click", function () {
-    removeAllEventListeners();
-    gridItems.forEach(function (element) {
-        element.addEventListener("mouseenter", function(e) {
-            changeColor(e, "random");
-        });
-    })
-});
-
-let resetButton = document.querySelector("#resetter");
-resetButton.addEventListener("click", function () {
-    removeAllEventListeners();
-    gridItems.forEach(function (element) {
-        element.style.backgroundColor = "white";
-    })
-});
 
 function removeAllEventListeners() {
     gridItems.forEach(function (element) {
