@@ -29,7 +29,6 @@ Jaizzer-Sketch is a straightforward web application that lets you draw and doodl
 3. Start drawing by hovering your mouse over the grid squares.
 4. Use the "Reset" button to clear the grid and start fresh.
 
-Please note that the buttons for different functionalities are available, but the actual functionalities are yet to be implemented.
 
 ## How to Run
 
