@@ -22,6 +22,16 @@ nav {
 .logo {
     font-size: 30px;
     font-weight: 500;
+
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+}
+
+
+.logo img {
+    height: 50px;
+    width: 50px;
 }
 
 /* Toolbar */
