@@ -21,8 +21,8 @@ document.addEventListener('mouseup', () => {
     isPaintingEnabled = false;
 })
 
-// Create a grid with a default size of 16 squares
-createGrid(16);
+// Create a grid with a default size of 32 squares
+createGrid(32);
 
 // Add functionality to the black button to create a black-inked pen effect
 let blackButton = document.querySelector("#black");
