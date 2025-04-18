@@ -11,6 +11,16 @@ button.addEventListener("click", replaceCurrentGrid);
 
 let gridItems = [];
 
+
+// Create a logic that only allows grid change if the user is holding the mouse
+let isPaintingEnabled = false;
+document.addEventListener('mousedown', () => {
+    isPaintingEnabled = true;
+})
+document.addEventListener('mouseup', () => {
+    isPaintingEnabled = false;
+})
+
 // Create a grid with a default size of 16 squares
 createGrid(16);
 
@@ -20,6 +30,11 @@ blackButton.addEventListener("click", function () {
     removeAllEventListeners()
     gridItems.forEach(function (element) {
         element.addEventListener("mouseenter",  function(e) {
+            if (isPaintingEnabled) {
+                changeColor(e, "black");
+            }
+        });    
+        element.addEventListener("mousedown",  function(e) {
             changeColor(e, "black");
         });    
     })
@@ -31,6 +46,11 @@ eraser.addEventListener("click", function () {
     removeAllEventListeners();
     gridItems.forEach(function (element) {
         element.addEventListener("mouseenter",  function(e) {
+            if (isPaintingEnabled) {
+                changeColor(e, "white");
+            }
+        });
+        element.addEventListener("mousedown",  function(e) {
             changeColor(e, "white");
         });
     })
@@ -42,6 +62,11 @@ colorPicker.addEventListener("change", function () {
     removeAllEventListeners();
     gridItems.forEach(function (element) {
         element.addEventListener("mouseenter",  function(e) {
+            if (isPaintingEnabled) {
+                changeColor(e, `${colorPicker.value}`);
+            }
+        });
+        element.addEventListener("mousedown",  function(e) {
             changeColor(e, `${colorPicker.value}`);
         });
     })
@@ -53,6 +78,11 @@ rainbowButton.addEventListener("click", function () {
     removeAllEventListeners();
     gridItems.forEach(function (element) {
         element.addEventListener("mouseenter", function(e) {
+            if (isPaintingEnabled) {
+                changeColor(e, "random");
+            }
+        });
+        element.addEventListener("mousedown", function(e) {
             changeColor(e, "random");
         });
     })
